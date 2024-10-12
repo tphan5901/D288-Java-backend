@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.NonNull;
 
 @Data
-public class PurchaseResponse {
+public class  PurchaseResponse {
 
     @NonNull
     private String orderTrackingNumber;

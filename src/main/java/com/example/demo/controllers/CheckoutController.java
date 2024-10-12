@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
-
     private final CheckoutService checkoutservice;
 
     public CheckoutController(CheckoutService checkoutservice) {
-
         this.checkoutservice = checkoutservice;
+
     }
 
     @PostMapping("/purchase")

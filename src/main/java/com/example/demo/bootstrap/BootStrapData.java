@@ -9,67 +9,60 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
+    private final CustomerRepository customerRepository;
+    private final DivisionRepository divisionRepository;
 
-    public BootStrapData(CustomerRepository customerRepository, DivisionRepository divisionRepository) {
+    public BootStrapData(CustomerRepository customerRepository, DivisionRepository divisionRepository, CustomerRepository customerRepository1, DivisionRepository divisionRepository1) {
+        this.customerRepository = customerRepository1;
+        this.divisionRepository = divisionRepository1;
     }
 
     @Override
     public void run(String... args) throws Exception {
-/*
 
         Customer one = new Customer();
         one.setFirstName("Ken");
-        one.setLastName("Doll");
-        one.setPhone("999");
+        one.setLastName("ne");
         one.setPostal_code("9090");
         one.setAddress("45 ln");
-        one.setDivisions(az);
-        divisionRepository.save(az);
-        customerRepository.save(one);
 
         Customer two = new Customer();
-        two.setFirstName("Rick");
-        two.setLastName("Man");
+        two.setFirstName("Ri");
+        two.setLastName("mi");
         two.setPhone("998");
         two.setPostal_code("9098");
         two.setAddress("43 ln");
-        two.setDivisions(az);
-        divisionRepository.save(az);
-        customerRepository.save(two);
 
         Customer three = new Customer();
-        three.setFirstName("Sam");
-        three.setLastName("Well");
-        three.setPhone("994");
-        three.setPostal_code("9094");
+        three.setFirstName("ma");
+        three.setLastName("ma");
+        three.setPhone("23423");
+        three.setPostal_code("124");
         three.setAddress("49 ln");
-        three.setDivisions(az);
-        divisionRepository.save(az);
-        customerRepository.save three);
+        customerRepository.save(three);
 
         Customer mel = new Customer();
         mel.setFirstName("Mel");
         mel.setLastName("fay");
-        mel.setPhone("991");
-        mel.setPostal_code("9091");
+        mel.setPhone("523");
+        mel.setPostal_code("52351");
         mel.setAddress("41 ln");
-        mel.setDivisions(az);
-        divisionRepository.save(az);
-        customerRepository.save(mel);
 
         Customer five = new Customer();
-        five.setFirstName("Tia");
+        five.setFirstName("fun");
         five.setLastName("Yun");
-        five.setPhone("9932");
-        five.setPostal_code("9532");
+        five.setPhone("2523");
+        five.setPostal_code("92495");
         five.setAddress("40 ln");
-        five.setDivisions(az);
-        divisionRepository.save(az);
+
+        customerRepository.save(one);
+        customerRepository.save(two);
+        customerRepository.save(three);
+        customerRepository.save(mel);
         customerRepository.save(five);
 
-        System.out.println("Number of customers: " + customerRepository.count());
+        System.out.println("Customer count: " + customerRepository.count());
 
- */
     }
 
 }

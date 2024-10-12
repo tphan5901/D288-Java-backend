@@ -46,16 +46,10 @@ public class Cart {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
     private Set<CartItem> cartitem;
 
-    public void setCustomer(Customer customer) {
-    }
-
     public void setCartitem(Set<CartItem> cartItems) {
     }
 
     public void setOrderTrackingNumber(String orderTrackingNumber) {
-    }
-
-    public void setStatus(StatusType statusType) {
     }
 
     public String getOrderTrackingNumber() {

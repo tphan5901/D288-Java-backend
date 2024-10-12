@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="CartItem")
+@Table(name="cartitem")
 @Getter
 @Setter
 public class CartItem {

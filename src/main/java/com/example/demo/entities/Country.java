@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name="Country")
+@Table(name="countries")
 @Data
 public class Country {
     @Id
