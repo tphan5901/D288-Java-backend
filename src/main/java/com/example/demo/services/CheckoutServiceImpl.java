@@ -14,8 +14,8 @@ import static com.example.demo.entities.StatusType.*;
 @Service
 public class CheckoutServiceImpl implements CheckoutService{
 
-    private CustomerRepository customerRepository;
-    private CartRepository cartRepository;
+    private final CustomerRepository customerRepository;
+    private final CartRepository cartRepository;
 
 
     public CheckoutServiceImpl(CustomerRepository customerRepository, CartRepository cartRepository) {
@@ -45,11 +45,12 @@ public class CheckoutServiceImpl implements CheckoutService{
 
             customerRepository.save(customer);
             cartRepository.save(cart);
-
             return new PurchaseResponse(cart.getOrderTrackingNumber());
+
         } catch (Exception e) {
             return new PurchaseResponse("Error: " + e.getMessage());
         }
+
     }
 
     private String generateOrderTrackingNumber() {

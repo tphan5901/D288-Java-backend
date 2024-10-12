@@ -5,7 +5,6 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.Set;
@@ -14,7 +13,6 @@ import java.util.Set;
 @Table(name="cart")
 @Data
 public class Cart {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id")

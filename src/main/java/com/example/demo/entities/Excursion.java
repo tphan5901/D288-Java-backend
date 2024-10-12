@@ -1,5 +1,4 @@
 package com.example.demo.entities;
-
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -8,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
@@ -19,7 +17,6 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 public class Excursion {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "excursion_id")
