@@ -53,16 +53,16 @@ public class Customer {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private Set<Cart> carts;
 
-    public void setFirstName(String ken) {
+    public void setFirstName(String name) {
     }
 
-    public void setLastName(String doll) {
+    public void setLastName(String lastname) {
     }
 
     public void setPostal_code(String number) {
     }
 
-    public void setAddress(String s) {
+    public void setAddress(String address) {
     }
 
     public void setPhone(String number) {
