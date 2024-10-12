@@ -17,6 +17,7 @@ import java.util.Set;
 @Table(name="Customer")
 @Data
 public class Customer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id", nullable = false)
@@ -51,5 +52,20 @@ public class Customer {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private Set<Cart> carts;
+
+    public void setFirstName(String ken) {
+    }
+
+    public void setLastName(String doll) {
+    }
+
+    public void setPostal_code(String number) {
+    }
+
+    public void setAddress(String s) {
+    }
+
+    public void setPhone(String number) {
+    }
 
 }

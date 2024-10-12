@@ -10,5 +10,7 @@ public class  PurchaseResponse {
     private String orderTrackingNumber;
 
     public PurchaseResponse(String s) {
+
     }
+
 }

@@ -56,4 +56,10 @@ public class Cart {
         return "";
     }
 
+    public void setCustomer(Customer customer) {
+    }
+
+    public void setStatus(StatusType statusType) {
+    }
+
 }
