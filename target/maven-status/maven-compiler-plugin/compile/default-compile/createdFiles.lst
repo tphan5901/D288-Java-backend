@@ -11,6 +11,7 @@ com\example\demo\services\CheckoutServiceImpl.class
 com\example\demo\entities\Customer.class
 com\example\demo\services\Purchase.class
 com\example\demo\controllers\CheckoutController.class
+com\example\DemoApplication.class
 com\example\demo\config\RestDataConfig.class
 com\example\demo\entities\Division.class
 com\example\demo\dao\CartRepository.class

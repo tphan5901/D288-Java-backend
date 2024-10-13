@@ -14,7 +14,7 @@ import java.util.Set;
 
 
 @Entity
-@Table(name="Customer")
+@Table(name="customers")
 @Data
 public class Customer {
 

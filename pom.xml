@@ -53,6 +53,8 @@
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+							<source>17</source>
+							<target>17</target>
 						</exclude>
 					</excludes>
 				</configuration>

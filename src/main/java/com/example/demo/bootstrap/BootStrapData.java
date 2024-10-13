@@ -12,9 +12,9 @@ public class BootStrapData implements CommandLineRunner {
     private final CustomerRepository customerRepository;
     private final DivisionRepository divisionRepository;
 
-    public BootStrapData(CustomerRepository customerRepository, DivisionRepository divisionRepository, CustomerRepository customerRepository1, DivisionRepository divisionRepository1) {
-        this.customerRepository = customerRepository1;
-        this.divisionRepository = divisionRepository1;
+    public BootStrapData(CustomerRepository customerRepository, DivisionRepository divisionRepository) {
+        this.customerRepository = customerRepository;
+        this.divisionRepository = divisionRepository;
     }
 
     @Override

@@ -13,15 +13,12 @@ import static com.example.demo.entities.StatusType.*;
 
 @Service
 public class CheckoutServiceImpl implements CheckoutService{
-
     private final CustomerRepository customerRepository;
     private final CartRepository cartRepository;
-
 
     public CheckoutServiceImpl(CustomerRepository customerRepository, CartRepository cartRepository) {
         this.customerRepository = customerRepository;
         this.cartRepository = cartRepository;
-
     }
 
     @Override
