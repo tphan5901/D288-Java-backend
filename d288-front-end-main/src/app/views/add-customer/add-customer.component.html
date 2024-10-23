@@ -1,0 +1,64 @@
+<form class="form" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+
+  <div class="input-container">
+
+    <div>
+      <label for="firstName">
+        First Name
+      </label>
+      <input id="firstName" type="text" formControlName="firstName">
+    </div>
+
+    <div>
+      <label for="lastName">
+        Last Name
+      </label>
+      <input id="lastName" type="text" formControlName="lastName">
+    </div>
+
+    <div>
+      <label for="address">
+        Address
+      </label>
+      <input id="address" type="text" formControlName="address">
+    </div>
+
+    <div>
+      <label for="postal_code">
+        Postal Code
+      </label>
+      <input id="postal_code" type="text" formControlName="postal_code">
+    </div>
+
+    <div>
+      <label for="phone">
+        Phone Number
+      </label>
+      <input id="phone" type="text" formControlName="phone">
+    </div>
+
+    <div>
+      <label>
+        Country
+      </label>
+      <select [(ngModel)]="countryChoice" id="country" formControlName="country">
+        <option selected="true" disabled="disabled" hidden></option>
+        <option [ngValue]="country" *ngFor="let country of countries">{{country.country_name}}</option>
+      </select>
+    </div>
+
+    <div>
+      <label>
+        Division
+      </label>
+      <select [(ngModel)]="divisionChoice" id="division" formControlName="division">
+        <option selected="true" disabled="disabled" hidden></option>
+        <option [ngValue]="division" *ngFor="let division of getDivisionsByCountryId(countryChoice)">{{division.division_name}}</option>
+      </select>
+    </div>
+
+    <button class="button-31" type="submit">Add Customer</button>
+
+  </div>
+
+</form>

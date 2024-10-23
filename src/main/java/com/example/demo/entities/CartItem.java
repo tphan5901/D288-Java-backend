@@ -12,11 +12,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="cartitem")
+@Table(name="cart_items")
 @Getter
 @Setter
 public class CartItem {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_item_id")

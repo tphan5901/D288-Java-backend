@@ -29,11 +29,13 @@ public class CheckoutServiceImpl implements CheckoutService{
             Set<CartItem> cartItems = purchase.getCartItems();
             Customer customer = purchase.getCustomer();
 
-            if (customer == null || cartItems.isEmpty()) {
-                throw new IllegalArgumentException("Customer cannot be null and cart items cannot be empty.");
+            if (customer == null) {
+                throw new IllegalArgumentException("Customer: None");
+            }
+            if(cartItems.isEmpty()){
+                throw new IllegalArgumentException("cart items cannot be empty");
             }
 
-            // Set order details
             cart.setOrderTrackingNumber(generateOrderTrackingNumber());
             cartItems.forEach(item -> item.setCart(cart));
             cart.setCartitem(cartItems);

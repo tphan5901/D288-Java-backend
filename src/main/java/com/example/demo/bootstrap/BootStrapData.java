@@ -3,26 +3,22 @@ package com.example.demo.bootstrap;
 import com.example.demo.dao.CustomerRepository;
 import com.example.demo.dao.DivisionRepository;
 import com.example.demo.entities.Customer;
-import com.example.demo.entities.Division;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
     private final CustomerRepository customerRepository;
-    private final DivisionRepository divisionRepository;
 
-    public BootStrapData(CustomerRepository customerRepository, DivisionRepository divisionRepository) {
+    public BootStrapData(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
-        this.divisionRepository = divisionRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
-
         Customer one = new Customer();
-        one.setFirstName("Ken");
-        one.setLastName("ne");
+        one.setFirstName("lawliet");
+        one.setLastName("light");
         one.setPostal_code("9090");
         one.setAddress("45 ln");
 
@@ -34,8 +30,8 @@ public class BootStrapData implements CommandLineRunner {
         two.setAddress("43 ln");
 
         Customer three = new Customer();
-        three.setFirstName("ma");
-        three.setLastName("ma");
+        three.setFirstName("shana");
+        three.setLastName("lin");
         three.setPhone("23423");
         three.setPostal_code("124");
         three.setAddress("49 ln");
@@ -61,7 +57,6 @@ public class BootStrapData implements CommandLineRunner {
         customerRepository.save(mel);
         customerRepository.save(five);
 
-        System.out.println("Customer count: " + customerRepository.count());
 
     }
 

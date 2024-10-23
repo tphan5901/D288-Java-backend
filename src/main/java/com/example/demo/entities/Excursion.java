@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name="Excursion")
+@Table(name="excursions")
 @Getter
 @Setter
 @NoArgsConstructor

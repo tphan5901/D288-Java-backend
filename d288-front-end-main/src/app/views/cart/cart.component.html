@@ -1,0 +1,31 @@
+<!--
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let cartItem of cartItems">
+      <mat-card class="mat-elevation-z4" >
+        <mat-card-content>
+          <img class="cart-item-card-image" mat-card-image src="{{cartItem.image_URL}}">
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+-->
+<h2>Cart</h2>
+
+<div class="content">
+  <ul *ngFor="let vacation of vacations">
+    <li>{{vacation.vacation_title}}</li>
+    <ul>
+      <li *ngFor="let excursion of vacation.excursions">{{excursion.excursion_title}}</li>
+    </ul>
+  </ul>
+</div>
+<div class="button-and-total-container">
+  <p>Bag Total: </p>
+  <p>${{bag_total | number:'1.2-2'}}</p>
+
+  <button class="button-31" [routerLink]="['/cart-summary']">
+    <a>Checkout</a>
+  </button>
+</div>

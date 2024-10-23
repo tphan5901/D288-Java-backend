@@ -1,0 +1,25 @@
+<div class="content ">
+  <div class="customer-info-container">
+    <h2>Customer Information</h2>
+    <h3>{{customer.firstName}} {{customer.lastName}}</h3>
+    <p>Address: {{customer.address}}</p>
+    <p>Postal Code: {{customer.postal_code}}</p>
+    <p>Phone: {{customer.phone}}</p>
+  </div>
+  <div class="cart-items-container">
+    <h2>Cart Summary</h2>
+    <ul>
+      <li *ngFor="let vacation of vacations">Vacation: <b>{{vacation.vacation_title}}</b>
+      <ul>
+        <li *ngFor="let excursion of vacation.excursions">{{excursion.excursion_title}}</li>
+      </ul>
+      </li>
+    </ul>
+    <p>Total: ${{bag_total | number:'1.2-2'}}</p>
+  </div>
+  <div class="checkout-button-container">
+    <button class="button-31" [routerLink]="['/order-confirmation']" >
+      <a>Checkout</a>
+    </button>
+  </div>
+</div>

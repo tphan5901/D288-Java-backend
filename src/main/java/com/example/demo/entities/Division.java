@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name="Division")
+@Table(name="divisions")
 @Data
 public class Division {
     @Id
