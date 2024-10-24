@@ -22,7 +22,7 @@ public class Cart {
     private Long id;
 
     @Column(name = "order_tracking_number")
-    private String orderTrackingNumber;
+    public String orderTrackingNumber;
 
     @Column(name = "package_price")
     private BigDecimal packagePrice;

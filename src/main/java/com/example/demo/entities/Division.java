@@ -39,7 +39,5 @@ public class Division {
     @OneToMany(mappedBy = "division")
     private Set<Customer> customers;
 
-    public void setCountry(Country country) {
-    }
 
 }

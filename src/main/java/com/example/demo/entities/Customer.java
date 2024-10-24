@@ -23,34 +23,34 @@ public class Customer {
     private Long id;
 
     @Column(name = "customer_first_name", nullable = false)
-    private String firstName;
+    public String firstName;
 
     @Column(name = "customer_last_name")
-    private String lastName;
+    public String lastName;
 
     @Column(name = "address")
-    private String address;
+    public String address;
 
     @Column(name = "postal_code")
-    private String postalcode;
+    public String postalcode;
 
     @Column(name = "phone")
-    private String phone;
+    public String phone;
 
     @Column(name = "create_date", nullable = false)
     @CreationTimestamp
-    private Date create_date;
+    public Date create_date;
 
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
-    private Date last_update;
+    public Date last_update;
 
     @ManyToOne
     @JoinColumn(name = "division_id")
-    private Division division;
+    public Division division;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private Set<Cart> cart = new HashSet<>();
+    public Set<Cart> cart = new HashSet<>();
 
     public Set<Cart> getCart() {
         return cart;

@@ -26,14 +26,14 @@ public class CartItem {
     private Vacation vacation;
 
     @ManyToMany
-    @JoinTable(name = "excursion_cartItem", joinColumns =
+    @JoinTable(name = "excursion_cartitem", joinColumns =
     @JoinColumn(name = "cart_item_id"),
     inverseJoinColumns = @JoinColumn(name ="excursion_id"))
     private Set<Excursion> excursions = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="cart_id")
-    private Cart cart;
+    public Cart cart;
 
     @Column(name = "create_date")
     @CreationTimestamp
