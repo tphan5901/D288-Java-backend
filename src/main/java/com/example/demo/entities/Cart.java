@@ -30,10 +30,8 @@ public class Cart {
     @Column(name = "party_size")
     private int partySize;
 
-    /*
     @Column(name = "status", nullable = false)
     private StatusType status;
-    */
 
     @Column(name = "create_date")
     @CreationTimestamp

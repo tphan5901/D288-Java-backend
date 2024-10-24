@@ -52,11 +52,11 @@ public class BootStrapData implements CommandLineRunner {
         five.setPostalCode("92495");
         five.setAddress("40 ln");
 
-        customerRepository.save(one);
-        customerRepository.save(two);
-        customerRepository.save(three);
+ //       customerRepository.save(one);
+ //       customerRepository.save(two);
+//        customerRepository.save(three);
         customerRepository.save(mel);
-        customerRepository.save(five);
+//        customerRepository.save(five);
 
     }
 

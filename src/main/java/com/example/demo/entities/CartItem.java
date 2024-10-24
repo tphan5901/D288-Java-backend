@@ -1,5 +1,4 @@
 package com.example.demo.entities;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -21,19 +20,8 @@ public class CartItem {
     @Column(name = "cart_item_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="vacation_id")
-    private Vacation vacation;
-
-    @ManyToMany
-    @JoinTable(name = "excursion_cartitem", joinColumns =
-    @JoinColumn(name = "cart_item_id"),
-    inverseJoinColumns = @JoinColumn(name ="excursion_id"))
+    @ManyToMany(cascade=CascadeType.ALL, mappedBy = "cartItems")
     private Set<Excursion> excursions = new HashSet<>();
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="cart_id")
-    public Cart cart;
 
     @Column(name = "create_date")
     @CreationTimestamp
@@ -42,6 +30,15 @@ public class CartItem {
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date last_update;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="cart_id")
+    public Cart cart;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="vacation_id")
+    private Vacation vacation;
+
 
     public void setCart(Cart cart) {
         this.cart = cart;
