@@ -1,17 +1,20 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
-import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name="cart")
-@Data
+@Getter
+@Setter
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,44 +25,46 @@ public class Cart {
     private String orderTrackingNumber;
 
     @Column(name = "package_price")
-    private BigDecimal package_price;
+    private BigDecimal packagePrice;
 
     @Column(name = "party_size")
-    private Integer party_size;
+    private Integer partySize;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status",nullable = false)
+    @Column(name = "status", nullable = false)
     private StatusType status;
 
     @Column(name = "create_date")
     @CreationTimestamp
-    private Date create_date;
+    private LocalDateTime createDate;
 
     @Column(name = "last_update")
     @UpdateTimestamp
-    private Date last_update;
+    private LocalDateTime lastUpdate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="customer_id")
     private Customer customer;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
-    private Set<CartItem> cartitem;
+    private Set<CartItem> cartItems; // This is plural and should resolve
 
-    public void setCartitem(Set<CartItem> cartItems) {
+    public void add(CartItem item) {
+        if (item != null) {
+            if (cartItems == null) {
+                cartItems = new HashSet<>();
+            }
+            cartItems.add(item);
+            item.setCart(this);
+        }
+    }
+
+    public Set<CartItem> getCartItems() {
+        return cartItems;
     }
 
     public void setOrderTrackingNumber(String orderTrackingNumber) {
-    }
-
-    public String getOrderTrackingNumber() {
-        return "";
-    }
-
-    public void setCustomer(Customer customer) {
-    }
-
-    public void setStatus(StatusType statusType) {
+        this.orderTrackingNumber = orderTrackingNumber;
     }
 
 }

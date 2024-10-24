@@ -26,7 +26,7 @@ public class CartItem {
     private Vacation vacation;
 
     @ManyToMany
-    @JoinTable(name = "excursion_cartitem", joinColumns =
+    @JoinTable(name = "excursion_cartItem", joinColumns =
     @JoinColumn(name = "cart_item_id"),
     inverseJoinColumns = @JoinColumn(name ="excursion_id"))
     private Set<Excursion> excursions = new HashSet<>();
@@ -44,6 +44,6 @@ public class CartItem {
     private Date last_update;
 
     public void setCart(Cart cart) {
+        this.cart = cart;
     }
-
 }

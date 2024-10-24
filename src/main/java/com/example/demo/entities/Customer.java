@@ -3,19 +3,19 @@ package com.example.demo.entities;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
-
-
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
-
 
 @Entity
 @Table(name="customers")
-@Data
+@Getter
+@Setter
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,26 +45,15 @@ public class Customer {
     @UpdateTimestamp
     private Date last_update;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="division_id")
-    private Division divisions;
+    @ManyToOne
+    @JoinColumn(name = "division_id")
+    private Division division;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-    private Set<Cart> carts;
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private Set<Cart> carts = new HashSet<>();
 
-    public void setFirstName(String name) {
-    }
-
-    public void setLastName(String lastname) {
-    }
-
-    public void setPostal_code(String number) {
-    }
-
-    public void setAddress(String address) {
-    }
-
-    public void setPhone(String number) {
+    public Set<Cart> getCart() {
+        return carts;
     }
 
 }

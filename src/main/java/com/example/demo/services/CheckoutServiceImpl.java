@@ -2,17 +2,17 @@ package com.example.demo.services;
 
 import com.example.demo.dao.CartRepository;
 import com.example.demo.dao.CustomerRepository;
-import com.example.demo.entities.*;
+import com.example.demo.entities.Cart;
+import com.example.demo.entities.CartItem;
+import com.example.demo.entities.Customer;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 import java.util.UUID;
 
-import static com.example.demo.entities.StatusType.*;
-
 @Service
-public class CheckoutServiceImpl implements CheckoutService{
+public class CheckoutServiceImpl implements CheckoutService {
     private final CustomerRepository customerRepository;
     private final CartRepository cartRepository;
 
@@ -26,30 +26,25 @@ public class CheckoutServiceImpl implements CheckoutService{
     public PurchaseResponse placeOrder(Purchase purchase) {
         try {
             Cart cart = purchase.getCart();
+            String orderTrackingNumber = generateOrderTrackingNumber();
+            cart.setOrderTrackingNumber(orderTrackingNumber);
+
             Set<CartItem> cartItems = purchase.getCartItems();
+            cartItems.forEach(item -> {
+                if (item != null) {
+                    cart.getCartItems().add(item);
+                }
+            });
+
+
             Customer customer = purchase.getCustomer();
-
-            if (customer == null) {
-                throw new IllegalArgumentException("Customer: None");
-            }
-            if(cartItems.isEmpty()){
-                throw new IllegalArgumentException("cart items cannot be empty");
-            }
-
-            cart.setOrderTrackingNumber(generateOrderTrackingNumber());
-            cartItems.forEach(item -> item.setCart(cart));
-            cart.setCartitem(cartItems);
-            cart.setCustomer(customer);
-            cart.setStatus(ordered);
+            customer.getCart().add(cart);
 
             customerRepository.save(customer);
-            cartRepository.save(cart);
-            return new PurchaseResponse(cart.getOrderTrackingNumber());
-
+            return new PurchaseResponse(orderTrackingNumber);
         } catch (Exception e) {
             return new PurchaseResponse("Error: " + e.getMessage());
         }
-
     }
 
     private String generateOrderTrackingNumber() {

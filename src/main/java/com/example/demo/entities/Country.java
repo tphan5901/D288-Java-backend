@@ -4,6 +4,8 @@ package com.example.demo.entities;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,7 +15,8 @@ import java.util.Set;
 
 @Entity
 @Table(name="countries")
-@Data
+@Getter
+@Setter
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +37,5 @@ public class Country {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "country")
     private Set<Division> divisions;
 
-    public Object getId() {
-        return null;
-    }
+
 }

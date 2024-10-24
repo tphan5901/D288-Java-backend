@@ -3,6 +3,8 @@ package com.example.demo.entities;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,7 +14,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "vacations")
-@Data
+@Getter
+@Setter
 public class Vacation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
