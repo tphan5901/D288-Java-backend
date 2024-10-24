@@ -22,10 +22,10 @@ public class Customer {
     @Column(name = "customer_id", nullable = false)
     private Long id;
 
-    @Column(name = "customer_firstname", nullable = false)
+    @Column(name = "customer_first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "customer_lastname")
+    @Column(name = "customer_last_name")
     private String lastName;
 
     @Column(name = "address")

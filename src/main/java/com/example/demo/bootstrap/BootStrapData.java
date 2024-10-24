@@ -58,7 +58,6 @@ public class BootStrapData implements CommandLineRunner {
         customerRepository.save(mel);
         customerRepository.save(five);
 
-
     }
 
 }
