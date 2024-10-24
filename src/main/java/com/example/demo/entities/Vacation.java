@@ -29,10 +29,10 @@ public class Vacation {
     private String description;
 
     @Column(name = "travel_fare_price")
-    private BigDecimal travel_price;
+    private BigDecimal travel_price_price;
 
     @Column(name = "image_url")
-    private String image_URL;
+    private String image_url;
 
     @Column(name = "create_date")
     @CreationTimestamp
@@ -44,8 +44,5 @@ public class Vacation {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacation")
     private Set<Excursion> excursions;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacation")
-    private Set<CartItem> cartItems;
 
 }

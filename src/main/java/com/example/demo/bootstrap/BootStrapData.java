@@ -46,7 +46,7 @@ public class BootStrapData implements CommandLineRunner {
         mel.setAddress("41 ln");
 
         Customer five = new Customer();
-        five.setFirstName("fun");
+        five.setFirstName("Shun");
         five.setLastName("Yun");
         five.setPhone("2523");
         five.setPostalCode("92495");

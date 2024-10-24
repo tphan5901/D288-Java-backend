@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
+//gov = job security, exp, eliminate competitions(international , non wa state residents)
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -21,18 +21,19 @@ public class Cart {
     @Column(name = "cart_id")
     private Long id;
 
-    @Column(name = "order_tracking_number")
-    public String orderTrackingNumber;
+    @Column(name="order_tracking_number")
+    public String OrderTrackingNumber;
 
     @Column(name = "package_price")
     private BigDecimal packagePrice;
 
     @Column(name = "party_size")
-    private Integer partySize;
+    private int partySize;
 
-    @Enumerated(EnumType.STRING)
+    /*
     @Column(name = "status", nullable = false)
     private StatusType status;
+    */
 
     @Column(name = "create_date")
     @CreationTimestamp
@@ -64,7 +65,6 @@ public class Cart {
     }
 
     public void setOrderTrackingNumber(String orderTrackingNumber) {
-        this.orderTrackingNumber = orderTrackingNumber;
+        this.OrderTrackingNumber = orderTrackingNumber;
     }
-
 }

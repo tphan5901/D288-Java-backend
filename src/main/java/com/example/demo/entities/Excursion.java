@@ -30,7 +30,7 @@ public class Excursion {
     private BigDecimal excursion_price;
 
     @Column(name = "image_url")
-    private String image_URL;
+    private String imageURL;
 
     @Column(name = "create_date")
     @CreationTimestamp
@@ -40,12 +40,14 @@ public class Excursion {
     @UpdateTimestamp
     private Date last_update;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="vacation_id")
     private Vacation vacation;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "excursions")
-    public Set<CartItem> cartItems  = new HashSet<>();
+    @ManyToMany
+    @JoinTable(name="excursion_cartitem", joinColumns=@JoinColumn(name="cart_item_id"),
+            inverseJoinColumns=@JoinColumn(name="excursion_id"))
+    Set<CartItem> cartItems = new HashSet<>();
 
 
 }
