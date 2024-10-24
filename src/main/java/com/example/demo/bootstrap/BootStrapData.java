@@ -9,9 +9,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class BootStrapData implements CommandLineRunner {
     private final CustomerRepository customerRepository;
+    private final DivisionRepository divisionRepository;
 
-    public BootStrapData(CustomerRepository customerRepository) {
+    public BootStrapData(CustomerRepository customerRepository, DivisionRepository divisionRepository) {
         this.customerRepository = customerRepository;
+        this.divisionRepository = divisionRepository;
     }
 
     @Override
@@ -35,7 +37,6 @@ public class BootStrapData implements CommandLineRunner {
         three.setPhone("23423");
         three.setPostalCode("124");
         three.setAddress("49 ln");
-        customerRepository.save(three);
 
         Customer mel = new Customer();
         mel.setFirstName("Mel");

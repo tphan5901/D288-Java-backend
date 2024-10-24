@@ -32,7 +32,7 @@ public class Customer {
     private String address;
 
     @Column(name = "postal_code")
-    private String postal_code;
+    private String postalcode;
 
     @Column(name = "phone")
     private String phone;
@@ -65,7 +65,7 @@ public class Customer {
     }
 
     public void setPostalCode(String code) {
-        this.postal_code = code;
+        this.postalcode = code;
     }
 
     public void setAddress(String address) {
