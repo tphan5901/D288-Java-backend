@@ -50,10 +50,30 @@ public class Customer {
     private Division division;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private Set<Cart> carts = new HashSet<>();
+    private Set<Cart> cart = new HashSet<>();
 
     public Set<Cart> getCart() {
-        return carts;
+        return cart;
+    }
+
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
+    }
+
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
+    }
+
+    public void setPostalCode(String code) {
+        this.postal_code = code;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
 }

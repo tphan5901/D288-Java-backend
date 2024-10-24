@@ -48,5 +48,4 @@ public class Excursion {
     private Set<CartItem> cartItems  = new HashSet<>();
 
 
-
 }

@@ -47,7 +47,7 @@ public class Cart {
     private Customer customer;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
-    private Set<CartItem> cartItems; // This is plural and should resolve
+    private Set<CartItem> cartItems;
 
     public void add(CartItem item) {
         if (item != null) {

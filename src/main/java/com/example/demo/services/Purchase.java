@@ -13,15 +13,15 @@ public class Purchase {
     private Set<CartItem> cartItems;
 
     public Customer getCustomer() {
-        return customer;  // return the actual customer
+        return customer;
     }
 
     public Set<CartItem> getCartItems() {
-        return cartItems; // return the actual cart items
+        return cartItems;
     }
 
     public Cart getCart() {
-        return cart;      // return the actual cart
+        return cart;
     }
 }
 

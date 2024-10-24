@@ -35,8 +35,6 @@ public class CheckoutServiceImpl implements CheckoutService {
                     cart.getCartItems().add(item);
                 }
             });
-
-
             Customer customer = purchase.getCustomer();
             customer.getCart().add(cart);
 

@@ -19,21 +19,21 @@ public class BootStrapData implements CommandLineRunner {
         Customer one = new Customer();
         one.setFirstName("lawliet");
         one.setLastName("light");
-        one.setPostal_code("9090");
+        one.setPostalCode("9090");
         one.setAddress("45 ln");
 
         Customer two = new Customer();
         two.setFirstName("Ri");
         two.setLastName("mi");
         two.setPhone("998");
-        two.setPostal_code("9098");
+        two.setPostalCode("9098");
         two.setAddress("43 ln");
 
         Customer three = new Customer();
         three.setFirstName("shana");
         three.setLastName("lin");
         three.setPhone("23423");
-        three.setPostal_code("124");
+        three.setPostalCode("124");
         three.setAddress("49 ln");
         customerRepository.save(three);
 
@@ -41,14 +41,14 @@ public class BootStrapData implements CommandLineRunner {
         mel.setFirstName("Mel");
         mel.setLastName("fay");
         mel.setPhone("523");
-        mel.setPostal_code("52351");
+        mel.setPostalCode("52351");
         mel.setAddress("41 ln");
 
         Customer five = new Customer();
         five.setFirstName("fun");
         five.setLastName("Yun");
         five.setPhone("2523");
-        five.setPostal_code("92495");
+        five.setPostalCode("92495");
         five.setAddress("40 ln");
 
         customerRepository.save(one);
